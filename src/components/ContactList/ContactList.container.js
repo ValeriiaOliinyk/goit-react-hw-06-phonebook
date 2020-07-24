@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import contactsActions from '../../redux/phonebook/phonebook-actions';
+import contactsOperations from '../../redux/phonebook/phonebook-operations';
 import ContactList from './ContactList';
 
 const getVisibleContacts = (allContacts, filter) => {
@@ -14,7 +14,7 @@ const mapStateToProps = ({ contacts: { contacts, filter } }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onDeleteContact: id => dispatch(contactsActions.deleteContact(id)),
+  onDeleteContact: id => dispatch(contactsOperations.deleteContact(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactList);

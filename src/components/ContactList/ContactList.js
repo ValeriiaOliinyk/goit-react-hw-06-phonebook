@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import Contact from '../Contact';
 import styles from './ContactList.module.css';
+import { connect } from 'react-redux';
 
 const ContactList = ({ contacts, onDeleteContact }) => (
   <ul className={styles.list}>
@@ -30,4 +30,4 @@ ContactList.propTypes = {
   onDeleteContact: PropTypes.func.isRequired,
 };
 
-export default ContactList;
+export default connect()(ContactList);
