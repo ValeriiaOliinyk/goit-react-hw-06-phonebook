@@ -1,16 +1,10 @@
 import { connect } from 'react-redux';
 import contactsOperations from '../../redux/phonebook/phonebook-operations';
+import { getVisibleContacts } from '../../redux/phonebook/phonebook-selectors';
 import ContactList from './ContactList';
 
-const getVisibleContacts = (allContacts, filter) => {
-  const normalizedFilter = filter.toLocaleLowerCase();
-  return allContacts.filter(contact =>
-    contact.name.toLowerCase().includes(normalizedFilter),
-  );
-};
-
-const mapStateToProps = ({ contacts: { contacts, filter } }) => ({
-  contacts: getVisibleContacts(contacts, filter),
+const mapStateToProps = state => ({
+  contacts: getVisibleContacts(state),
 });
 
 const mapDispatchToProps = dispatch => ({
