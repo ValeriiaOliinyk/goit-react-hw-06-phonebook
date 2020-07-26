@@ -8,7 +8,7 @@ import Section from './components/Section';
 import Filter from './components/Filter';
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
-import contactsOperations from './redux/phonebook/phonebook-operations';
+import { contactsOperations } from './redux/phonebook';
 
 class App extends Component {
   componentDidMount() {
